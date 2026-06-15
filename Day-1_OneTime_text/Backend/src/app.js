@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const messageRoute = require('./routes/message.route');
 
 const app = express();
 
@@ -16,6 +17,6 @@ app.use(express.urlencoded({
     extended: true,
 }));
 
-
+app.use('/api/message', messageRoute);
 
 module.exports = app;
